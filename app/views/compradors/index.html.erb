@@ -1,0 +1,25 @@
+<h1>Listing compradors</h1>
+
+<table>
+  <tr>
+    <th>Codigo</th>
+    <th>Nombre</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @compradors.each do |comprador| %>
+  <tr>
+    <td><%= comprador.codigo %></td>
+    <td><%= comprador.nombre %></td>
+    <td><%= link_to 'Show', comprador %></td>
+    <td><%= link_to 'Edit', edit_comprador_path(comprador) %></td>
+    <td><%= link_to 'Destroy', comprador, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Comprador', new_comprador_path %>
